@@ -1,0 +1,27 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h2 class="text-center mb-4">Catálogo de Tênis</h2>
+  <ul class="list-group mb-4">
+    <li class="list-group-item"><strong>Produto:</strong> {{ product }}</li>
+    <li class="list-group-item"><strong>Categoria:</strong> {{ category }}</li>
+    <li class="list-group-item">
+      <strong>Modelos Disponíveis:</strong>
+      <ul class="mt-2">
+        {% for product_item in products %}
+          <li>{{ product_item }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+    <li class="list-group-item">
+      <strong>Tamanhos:</strong>
+      <ul class="mt-2">
+        {% for size in sizes %}
+          <li>{{ size['Tamanho'] }} - {{ size['Medidas'] }}</li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+</div>
+{% endblock %}
