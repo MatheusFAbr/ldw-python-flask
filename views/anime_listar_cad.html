@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h2 class="text-center mb-4">Meus Animes Favoritos</h2>
+  {% if animes %}
+  <ul class="list-group">
+    {% for anime in animes %}
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <span><strong>{{ anime.titulo }}</strong> - {{ anime.genero }} (Nota: {{ anime.nota }})</span>
+      <a href="{{ url_for('remover', index=loop.index0) }}" class="btn btn-sm btn-danger">Remover</a>
+    </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p class="text-center">Nenhum anime cadastrado ainda.</p>
+  {% endif %}
+</div>
+{% endblock %}
