@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white p-5 rounded shadow-sm">
+  <h2 class="mb-4 text-center">Cadastrar Anime Favorito</h2>
+  <form method="POST" action="{{ url_for('cadastro_anime') }}">
+    <div class="mb-3">
+      <label class="form-label">Título</label>
+      <input type="text" name="titulo" class="form-control" placeholder="Ex: Naruto Shippuden">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Gênero</label>
+      <input type="text" name="genero" class="form-control" placeholder="Ex: Ação, Aventura">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">Nota</label>
+      <input type="number" step="0.1" name="nota" class="form-control" placeholder="Ex: 9.0">
+    </div>
+    <div class="mb-3">
+      <label class="form-label">URL da imagem (opcional)</label>
+      <input type="text" name="image" class="form-control" placeholder="https://...">
+    </div>
+    <button type="submit" class="btn btn-success">Cadastrar</button>
+  </form>
+</div>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="text-center">
+  <h1 class="display-4 fw-bold mb-3">Bem-vindo ao Animes World</h1>
+  <p class="lead text-muted mb-5">Descubra e cadastre seus animes favoritos!</p>
+  <a href="{{ url_for('lista_animes') }}" class="btn btn-primary btn-lg me-2">Ver Catálogo</a>
+  <a href="{{ url_for('cadastro_anime') }}" class="btn btn-outline-dark btn-lg">Cadastrar Anime</a>
+</div>
+{% endblock %}

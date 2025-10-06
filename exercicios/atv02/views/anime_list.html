@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="bg-white p-4 rounded shadow-sm">
+  <h2 class="text-center mb-4">Top Animes</h2>
+  <div class="row">
+    {% for anime in animes %}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100 shadow-sm">
+        <img src="{{ anime.images.jpg.image_url }}" class="card-img-top" alt="{{ anime.title }}">
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">{{ anime.title }}</h5>
+          <a href="{{ url_for('detalhes_anime', anime_id=anime.mal_id) }}" class="btn btn-dark mt-auto">Detalhes</a>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
